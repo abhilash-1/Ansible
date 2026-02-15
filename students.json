@@ -1,0 +1,27 @@
+{
+    "students":
+    [
+        {
+            "first_name":"Abhilash",
+            "last_name": "Moddu",
+            "address":[
+                {
+                    "type": "current",
+                    "street name": "Anupama nagar",
+                    "street no": 5,
+                    "Area":"Hasthinapuram"
+                },
+                {
+                    "type":"permanent",
+                    "street name": "Anupama nagar",
+                    "street no": 5,
+                    "Area":"Hasthinapuram"
+                }
+            ]
+
+        },
+    {
+
+    }
+]
+}

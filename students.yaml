@@ -1,0 +1,18 @@
+- name: "Abhilash"
+  Last_name: "Moddu"
+  DOB: 210100
+  Occupation: "Salaried"
+  Job: "Infosys"
+  Experience:
+    - Infosys: 3.6
+      IDC: 6
+      Revature: 4
+  
+- name: "Bunny"
+  DOB: 220200
+  Occupation: "Business"
+  Business_type: "trading"
+  
+
+
+
