@@ -1,12 +1,15 @@
 - name: Variable usage
   user: Local
   hosts: web
-  name: "Abhi"
-  DOB: "21-01-2000"
-  Hobby: "Exercising"
-  Course: "DevOps"
+  vars:
+    name: "Abhi"
+    DOB: "21-01-2000"
+    Hobby: "Exercising"
+    Course: "DevOps"
   tasks:
     - name: Dynamic Variable usage
       ansible.builtin.debug:
-        msg: "{{name}} DOB is {{DOB}} and course is {{course}}"
+        msg: "{{name}} DOB is {{DOB}} and course is {{Course}}"
+    - name: Dynamic Variable usage
+      ansible.builtin.debug:   
         msg: "{{name}} fav hobby is {{Hobby}}"
