@@ -1,0 +1,12 @@
+- name: Variable usage
+  user: Local
+  hosts: web
+  vars_files:
+    course.yaml
+  tasks:
+    - name: Dynamic Variable usage
+      ansible.builtin.debug:
+        msg: "{{name}} DOB is {{DOB}} and course is {{Course}}"
+    - name: Dynamic Variable usage
+      ansible.builtin.debug:   
+        msg: "{{name}} fav hobby is {{Hobby}}"
