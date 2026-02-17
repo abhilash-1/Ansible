@@ -1,0 +1,7 @@
+- name: filters
+  hosts: web
+  connection: ssh
+  tasks: 
+    - name: using default filter for def variable
+      ansible.builtin.debug:
+        msg: "{{Greeting}}"
