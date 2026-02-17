@@ -1,12 +1,13 @@
 - name: Variable usage
   user: Local
-  hosts: web
+  hosts: local
   vars_files:
     course.yaml
   tasks:
     - name: Dynamic Variable usage
-      vars:
-        name: Bunny
+      vars: 
+        name:"bunny"
+
       ansible.builtin.debug:
         msg: "{{name}} DOB is {{DOB}} and course is {{Course}}"
     - name: Dynamic Variable usage
