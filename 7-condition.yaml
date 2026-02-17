@@ -9,7 +9,7 @@
         state: present
 
     - name: Starting server
-      ansible.builtin.server:
+      ansible.builtin.service:
         name: nginx
         state: started
       when: nginx.state="started"
