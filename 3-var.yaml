@@ -6,7 +6,7 @@
   tasks:
     - name: Dynamic Variable usage
       vars: 
-        name:"bunny"
+        name: "bunny"
 
       ansible.builtin.debug:
         msg: "{{name}} DOB is {{DOB}} and course is {{Course}}"
