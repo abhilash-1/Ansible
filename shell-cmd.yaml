@@ -1,0 +1,10 @@
+- name: shell and cmd
+  hosts: web
+  connection: local
+  tasks:
+    - name: cmd output
+      ansible.builtin.command:
+        cmd: touch file.txt
+    - name: Shell output
+      ansible.builtin.shell:
+        cmd: cat file.txt | grep Hi
