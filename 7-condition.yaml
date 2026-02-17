@@ -13,23 +13,22 @@
       ansible.builtin.service:
         name: nginx
         state: started
-      register: nginx_status
+        enabled: yes
+      register: nginx_enabled
+
       when: nginx_installation is succeeded
 
     - name: Enabling server
       ansible.builtin.service:
         name: enable nginx
-        enabled: yes
-      register: nginx_enabled
       when: nginx_enabled is succeeded
  
 
     - name: service ansible_facts
       ansible.builtin.service_facts:
-      when: ansible_facts.services["nginx.service"].state=="running"
-
+      
 
     - name: checking whether the service started or not
       ansible.builtin.debug:
         msg: "Server started and enabled successfully"
-      
+      when: ansible_facts.services["nginx.service"].state=="running"
