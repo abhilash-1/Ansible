@@ -1,6 +1,7 @@
 - name: Modules Installing
   hosts: web
   connection: ssh
+  become: yes
   vars: 
     A: "Hi"
     B: "Hello"
