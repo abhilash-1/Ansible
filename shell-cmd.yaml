@@ -6,5 +6,14 @@
       ansible.builtin.command:
         cmd: touch file.txt
     - name: Shell output
+      ansible.builtin.command:
+        cmd: cat > file.txt 
+      register: files
+
+    - name: print output
+      ansible.builtin.debug:
+        msg: "The output is: {{files}}"
+
+    - name: Shell grep
       ansible.builtin.shell:
-        cmd: cat file.txt | grep Hi
+        cmd: cat file.txxt | grep hi
