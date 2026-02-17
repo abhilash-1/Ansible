@@ -13,8 +13,8 @@
       ansible.builtin.service:
         name: nginx
         state: started
-      
-      ansible.buitlin.debug:
-        msg: "Checking whether the service is started or not"
       when: ansible_facts.services["nginx.service"].state=="running"
 
+      ansible.buitlin.debug:
+        msg: "Checking whether the service is started or not"
+      
