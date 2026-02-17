@@ -11,9 +11,9 @@
         cmd: echo "Hello and hi" >> /home/ec2-user/file.txt
       register: files
 
-    - name: print output
+    - name: checking whether the write is successfull or not
       ansible.builtin.debug:
-        msg: "The output is: {{files}}"
+        msg: "The output is: {{files.rc}}"
       when: files.rc == 0
 
     - name: Shell grep
