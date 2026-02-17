@@ -13,14 +13,18 @@
       ansible.builtin.service:
         name: nginx
         state: started
+        enabled: yes
       register: nginx_status
+      register: nginx_enabled
       when: nginx_installation is succeeded
+      when: nginx_enabled is succeeded
 
     - name: service ansible_facts
       ansible.builtin.service_facts:
+      when: ansible_facts.services["nginx.service"].state=="running"
+
 
     - name: checking whether the service started or not
       ansible.builtin.debug:
-        msg: "nginx status is {{ nginx_status.stdout }}"
-      when: ansible_facts.services["nginx.service"].state=="running"
-
+        msg: "Server started and enabled successfully"
+      
