@@ -7,9 +7,14 @@
       ansible.builtin.package:
         name: nginx
         state: present
+      register: nginx_installation
 
     - name: Starting server
       ansible.builtin.service:
         name: nginx
         state: started
-      when: nginx.state == "started"
+      when: nginx_installation is succeeded
+      ansible.buitlin.debug:
+        msg: "Checking whether the service is started or not"
+      when: ansible_facts.services["nginx.service"].state=="running"
+
