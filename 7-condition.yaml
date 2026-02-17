@@ -15,7 +15,9 @@
         state: started
       when: nginx_installation is succeeded
 
-
+    - name: service ansible_facts
+      ansible.builtin.service_facts:
+      
     - name: checking whether the service started or not
       ansible.builtin.debug:
         msg: "Checking whether the service is started or not"
