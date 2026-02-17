@@ -1,0 +1,12 @@
+- name: Loop
+  hosts: web
+  connection: ssh
+  tasks: 
+    - name: Looping
+      ansible.builtin.debug:
+        msg: " Arigatho {{item}}"
+      loop:
+        - Luffy
+        - Naruto
+        - Goku
+      
