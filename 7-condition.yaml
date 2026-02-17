@@ -13,7 +13,7 @@
       ansible.builtin.service:
         name: nginx
         state: started
-      when: nginx_installation is failed
+      when: nginx_installation is succeeded
 
     - name: service ansible_facts
       ansible.builtin.service_facts:
