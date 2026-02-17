@@ -1,0 +1,7 @@
+- name: Arguments or user dynamic variables
+  hosts: local
+  connection: local
+  tasks:
+    - name: Giving vars at run time
+      ansible.builtin.debug:
+        msg: "The run time var is {{A}}"
