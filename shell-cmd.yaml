@@ -4,15 +4,17 @@
   tasks:
     - name: cmd output
       ansible.builtin.command:
-        cmd: touch file.txt
-    - name: Shell output
-      ansible.builtin.command:
-        cmd: cat > file.txt 
+        cmd: touch /home/ec2-user/file.txt
+
+    - name: Shell output writing into file
+      ansible.builtin.shell:
+        cmd: echo "Hello and hi" > /home/ec2-user/file.txt
       register: files
 
     - name: print output
       ansible.builtin.debug:
         msg: "The output is: {{files}}"
+      when: files.rc == 0
 
     - name: Shell grep
       ansible.builtin.shell:
