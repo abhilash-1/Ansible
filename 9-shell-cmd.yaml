@@ -18,4 +18,4 @@
 
     - name: Shell grep
       ansible.builtin.shell:
-        cmd: cat file.txt | grep hi
+        cmd: cat /home/ec2-user/file.txt | grep hi
