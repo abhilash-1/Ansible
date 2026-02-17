@@ -18,4 +18,4 @@
 
     - name: Shell grep
       ansible.builtin.shell:
-        cmd: cat file.txxt | grep hi
+        cmd: cat file.txt | grep hi
