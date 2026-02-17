@@ -18,4 +18,10 @@
 
     - name: Shell grep
       ansible.builtin.shell:
-        cmd: cat /home/ec2-user/file.txt | grep hi
+        cmd: cat /home/ec2-user/file.txt
+      register: output
+
+    - name: output of file
+      ansible.builtin.debug:
+        msg: "The content in file.txt {{output}}
+      when: output.rc == 0
