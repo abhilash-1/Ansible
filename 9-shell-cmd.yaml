@@ -8,7 +8,7 @@
 
     - name: Shell output writing into file
       ansible.builtin.shell:
-        cmd: echo "Hello and hi" > /home/ec2-user/file.txt
+        cmd: echo "Hello and hi" >> /home/ec2-user/file.txt
       register: files
 
     - name: print output
