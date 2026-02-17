@@ -29,6 +29,7 @@
       
 
     - name: checking whether the service started or not
+      when: ansible_facts.services["nginx.service"].state=="running"
       ansible.builtin.debug:
         msg: "Server started and enabled successfully"
-      when: ansible_facts.services["nginx.service"].state=="running"
+      
