@@ -1,0 +1,17 @@
+- name: Modules Installing
+  hosts: web
+  connection: ssh
+  vars: 
+    A: "Hi"
+    B: "Hello"
+    C: "yo"
+  tasks:
+    - name: Installing Modules
+      ansible.builtin.package:
+        name: "{{item}}"
+        state: present
+      loop:
+        - "{{A}}"
+        - "{{B}}"
+        - "{{C}}"
+     
