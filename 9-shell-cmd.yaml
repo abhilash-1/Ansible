@@ -23,5 +23,5 @@
 
     - name: output of file
       ansible.builtin.debug:
-        msg: "The content in file.txt {{output}}
+        msg: "The content in file.txt {{output}}"
       when: output.rc == 0
