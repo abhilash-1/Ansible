@@ -1,6 +1,8 @@
 - name: filters
   hosts: web
   connection: ssh
+  vars: 
+    courses: "DevOps, Ansible, Kubernetes, Docker, python"
   tasks: 
     - name: using default filter for def variable
       ansible.builtin.debug:
@@ -18,4 +20,8 @@
     - name: Converting the yaml to json
       ansible.builtin.debug:
         msg: "{{file_content | ansible.builtin.to_nice_json }}"
+
+    - name: Converting String to list
+      ansible.builtin.debug:
+        msg: "{{courses| split(',')}}"
 
