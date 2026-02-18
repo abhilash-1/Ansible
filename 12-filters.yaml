@@ -5,3 +5,17 @@
     - name: using default filter for def variable
       ansible.builtin.debug:
         msg: "{{Greeting | default('Good_Morning')}}"
+    - name: Storing file content in a varible
+      ansible.builtin.set_fact:
+        file_content: "{{lookup('file', students.yaml)}}"
+      register: output
+
+    - name: file lookup worked or not
+      ansible.builtin.debug:
+        msg: "The file is {{output}}"
+      when: output.rc == 0
+
+    - name: Converting the yaml to json
+      ansible.builtin.debug:
+        msg: "{{file_content | ansible.builtin.to_nice_json }}"
+
