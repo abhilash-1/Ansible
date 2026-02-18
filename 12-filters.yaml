@@ -7,7 +7,7 @@
         msg: "{{Greeting | default('Good_Morning')}}"
     - name: Storing file content in a varible
       ansible.builtin.set_fact:
-        file_content: "{{lookup('file', students.yaml)}}"
+        file_content: "{{lookup('file', 'students.yaml')}}"
       register: output
 
     - name: file lookup worked or not
