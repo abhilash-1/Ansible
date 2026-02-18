@@ -13,7 +13,7 @@
     - name: file lookup worked or not
       ansible.builtin.debug:
         msg: "The file is {{output}}"
-      when: output.rc == 0
+      #when: output.rc == 0
 
     - name: Converting the yaml to json
       ansible.builtin.debug:
