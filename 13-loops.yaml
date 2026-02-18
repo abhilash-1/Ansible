@@ -6,7 +6,7 @@
       - "DevOps"
       - "Full stack"
       - "Microservices"
-    tasks: 
-      - name: for loop testing
-        ansible.builtin.debug:
-          msg: "{{item}}"
+  tasks: 
+    - name: for loop testing
+      ansible.builtin.debug:
+        msg: "{{item}}"
