@@ -1,0 +1,12 @@
+- name: loops
+  hosts: web
+  connection: ssh
+  vars: 
+    courses:
+      - "DevOps"
+      - "Full stack"
+      - "Microservices"
+    tasks: 
+      - name: for loop testing
+        ansible.builtin.debug:
+          msg: "{{item}}"
