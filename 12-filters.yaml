@@ -3,6 +3,10 @@
   connection: ssh
   vars: 
     courses: "DevOps, Ansible, Kubernetes, Docker, python"
+    tagsDict:
+      Anime: OnePiece
+      episodes: 1120
+      Creator: Eichiro Odin
   tasks: 
     - name: using default filter for def variable
       ansible.builtin.debug:
@@ -24,4 +28,8 @@
     - name: Converting String to list
       ansible.builtin.debug:
         msg: "{{courses| split(',')}}"
+
+    - name: Converting dict to list
+      ansible.builtin.debug:
+        msg: "{{tagsDict | dict2items }}"
 
